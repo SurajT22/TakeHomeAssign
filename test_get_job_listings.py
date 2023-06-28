@@ -1,9 +1,10 @@
+import pytest
 import unittest
 from flask import Flask, jsonify
 from main import JobListing, Application, app, db
 
 
-class FlaskTestCase(unittest.TestCase):
+class FlaskTestCase(unittest.TestCase,pytest):
     def setUp(self):
         self.app = app.test_client()
         self.app.testing = True
@@ -21,9 +22,9 @@ class FlaskTestCase(unittest.TestCase):
             # Use the JobListing and Application classes for testing
             # Example:
             job_listings = JobListing.query.all()
-
-        return job_listings
         # Assert the expected results
+        return job_listings
+
 
 
 if __name__ == '__main__':
