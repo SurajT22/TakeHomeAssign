@@ -4,7 +4,7 @@ from flask import Flask, jsonify
 from main import JobListing, Application, app, db
 
 
-class FlaskTestCase(unittest.TestCase,pytest):
+class test_get_job_listings(unittest.TestCase,pytest):
     def setUp(self):
         self.app = app.test_client()
         self.app.testing = True
